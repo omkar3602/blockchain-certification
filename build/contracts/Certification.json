@@ -1,0 +1,1863 @@
+{
+  "contractName": "Certification",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x8da5cb5b"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "competitionName",
+          "type": "string"
+        }
+      ],
+      "name": "issueCertificate",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xe98ac4d8"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "viewCertificates",
+      "outputs": [
+        {
+          "components": [
+            {
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "competitionName",
+              "type": "string"
+            },
+            {
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ],
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x7bc5133b"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060008054600160a060020a031916331790556107d6806100326000396000f3fe6080604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416637bc5133b811461005b5780638da5cb5b14610086578063e98ac4d8146100a8575b600080fd5b34801561006757600080fd5b506100706100ca565b60405161007d91906106be565b60405180910390f35b34801561009257600080fd5b5061009b61027c565b60405161007d91906106aa565b3480156100b457600080fd5b506100c86100c33660046104e6565b610298565b005b60606001805480602002602001604051908101604052809291908181526020016000905b828210156102725760008481526020908190206040805160808101825260048602909201805473ffffffffffffffffffffffffffffffffffffffff168352600180820180548451600261010094831615949094026000190190911692909204601f8101879004870283018701909452838252939491938583019391929091908301828280156101be5780601f10610193576101008083540402835291602001916101be565b820191906000526020600020905b8154815290600101906020018083116101a157829003601f168201915b5050509183525050600282810180546040805160206001841615610100026000190190931694909404601f810183900483028501830190915280845293810193908301828280156102505780601f1061022557610100808354040283529160200191610250565b820191906000526020600020905b81548152906001019060200180831161023357829003601f168201915b50505050508152602001600382015481525050815260200190600101906100ee565b5050505090505b90565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b337368ffd6c6695e64fde44cf491cb4619e05d592c2c146102ee576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102e5906106cf565b60405180910390fd5b6040805160808101825273ffffffffffffffffffffffffffffffffffffffff858116825260208083018681529383018590524260608401526001805480820180835560009290925284517fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf66004909202918201805473ffffffffffffffffffffffffffffffffffffffff1916919095161784559451805191956103b8937fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7909101929101906103e7565b50604082015180516103d49160028401916020909101906103e7565b5060608201518160030155505050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061042857805160ff1916838001178555610455565b82800160010185558215610455579182015b8281111561045557825182559160200191906001019061043a565b50610461929150610465565b5090565b61027991905b80821115610461576000815560010161046b565b600061048b8235610738565b9392505050565b6000601f820183136104a357600080fd5b81356104b66104b182610706565b6106df565b915080825260208301602083018583830111156104d257600080fd5b6104dd838284610756565b50505092915050565b6000806000606084860312156104fb57600080fd5b6000610507868661047f565b935050602084013567ffffffffffffffff81111561052457600080fd5b61053086828701610492565b925050604084013567ffffffffffffffff81111561054d57600080fd5b61055986828701610492565b9150509250925092565b61056c81610738565b82525050565b600061057d82610734565b808452602084019350836020820285016105968561072e565b60005b848110156105cd5783830388526105b183835161063e565b92506105bc8261072e565b602098909801979150600101610599565b50909695505050505050565b60006105e482610734565b8084526105f8816020860160208601610762565b61060181610792565b9093016020019392505050565b601d81527f596f752063616e6e6f7420697373756520636572746966696361746573000000602082015260400190565b805160009060808401906106528582610563565b506020830151848203602086015261066a82826105d9565b9150506040830151848203604086015261068482826105d9565b915050606083015161069960608601826106a1565b509392505050565b61056c81610279565b602081016106b88284610563565b92915050565b6020808252810161048b8184610572565b602080825281016106b88161060e565b60405181810167ffffffffffffffff811182821017156106fe57600080fd5b604052919050565b600067ffffffffffffffff82111561071d57600080fd5b506020601f91909101601f19160190565b60200190565b5190565b600073ffffffffffffffffffffffffffffffffffffffff82166106b8565b82818337506000910152565b60005b8381101561077d578181015183820152602001610765565b8381111561078c576000848401525b50505050565b601f01601f19169056fea265627a7a723058208c805459a3c72550405b86f8796cc5e1b6d2b44cd35e21259fb987e7931ef9146c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x6080604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416637bc5133b811461005b5780638da5cb5b14610086578063e98ac4d8146100a8575b600080fd5b34801561006757600080fd5b506100706100ca565b60405161007d91906106be565b60405180910390f35b34801561009257600080fd5b5061009b61027c565b60405161007d91906106aa565b3480156100b457600080fd5b506100c86100c33660046104e6565b610298565b005b60606001805480602002602001604051908101604052809291908181526020016000905b828210156102725760008481526020908190206040805160808101825260048602909201805473ffffffffffffffffffffffffffffffffffffffff168352600180820180548451600261010094831615949094026000190190911692909204601f8101879004870283018701909452838252939491938583019391929091908301828280156101be5780601f10610193576101008083540402835291602001916101be565b820191906000526020600020905b8154815290600101906020018083116101a157829003601f168201915b5050509183525050600282810180546040805160206001841615610100026000190190931694909404601f810183900483028501830190915280845293810193908301828280156102505780601f1061022557610100808354040283529160200191610250565b820191906000526020600020905b81548152906001019060200180831161023357829003601f168201915b50505050508152602001600382015481525050815260200190600101906100ee565b5050505090505b90565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b337368ffd6c6695e64fde44cf491cb4619e05d592c2c146102ee576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102e5906106cf565b60405180910390fd5b6040805160808101825273ffffffffffffffffffffffffffffffffffffffff858116825260208083018681529383018590524260608401526001805480820180835560009290925284517fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf66004909202918201805473ffffffffffffffffffffffffffffffffffffffff1916919095161784559451805191956103b8937fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf7909101929101906103e7565b50604082015180516103d49160028401916020909101906103e7565b5060608201518160030155505050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061042857805160ff1916838001178555610455565b82800160010185558215610455579182015b8281111561045557825182559160200191906001019061043a565b50610461929150610465565b5090565b61027991905b80821115610461576000815560010161046b565b600061048b8235610738565b9392505050565b6000601f820183136104a357600080fd5b81356104b66104b182610706565b6106df565b915080825260208301602083018583830111156104d257600080fd5b6104dd838284610756565b50505092915050565b6000806000606084860312156104fb57600080fd5b6000610507868661047f565b935050602084013567ffffffffffffffff81111561052457600080fd5b61053086828701610492565b925050604084013567ffffffffffffffff81111561054d57600080fd5b61055986828701610492565b9150509250925092565b61056c81610738565b82525050565b600061057d82610734565b808452602084019350836020820285016105968561072e565b60005b848110156105cd5783830388526105b183835161063e565b92506105bc8261072e565b602098909801979150600101610599565b50909695505050505050565b60006105e482610734565b8084526105f8816020860160208601610762565b61060181610792565b9093016020019392505050565b601d81527f596f752063616e6e6f7420697373756520636572746966696361746573000000602082015260400190565b805160009060808401906106528582610563565b506020830151848203602086015261066a82826105d9565b9150506040830151848203604086015261068482826105d9565b915050606083015161069960608601826106a1565b509392505050565b61056c81610279565b602081016106b88284610563565b92915050565b6020808252810161048b8184610572565b602080825281016106b88161060e565b60405181810167ffffffffffffffff811182821017156106fe57600080fd5b604052919050565b600067ffffffffffffffff82111561071d57600080fd5b506020601f91909101601f19160190565b60200190565b5190565b600073ffffffffffffffffffffffffffffffffffffffff82166106b8565b82818337506000910152565b60005b8381101561077d578181015183820152602001610765565b8381111561078c576000848401525b50505050565b601f01601f19169056fea265627a7a723058208c805459a3c72550405b86f8796cc5e1b6d2b44cd35e21259fb987e7931ef9146c6578706572696d656e74616cf50037",
+  "sourceMap": "101:747:0:-;;;405:57;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;437:5:0;:18;;-1:-1:-1;;;;;;437:18:0;445:10;437:18;;;101:747;;;;;;",
+  "deployedSourceMap": "101:747:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;734:111;;8:9:-1;5:2;;;30:1;27;20:12;5:2;734:111:0;;;;;;;;;;;;;;;;;;;;214:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;214:20:0;;;;;;;;;;;;468:260;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;468:260:0;;;;;;;;;;;734:111;783:20;826:12;819:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;819:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;819:19:0;;;-1:-1:-1;;819:19:0;;;;;;;;;;;;;;;;-1:-1:-1;;819:19:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;734:111;;:::o;214:20::-;;;;;;:::o;468:260::-;582:10;156:42;582:20;574:62;;;;;;;;;;;;;;;;;;;;;;665:55;;;;;;;;;;;;;;;;;;;;;;;;;;;704:15;665:55;;;;647:12;27:10:-1;;23:18;;;45:23;;;-1:-1;647:74:0;;;;;;;;;;;;;;;;-1:-1:-1;;647:74:0;;;;;;;;;;;;23:18:-1;;647:74:0;;;;;;;;;;;:::i;:::-;-1:-1:-1;647:74:0;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;468:260;;;:::o;101:747::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;101:747:0;;;-1:-1:-1;101:747:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;5:118:-1;;72:46;110:6;97:20;72:46;;;63:55;57:66;-1:-1;;;57:66;131:442;;226:4;214:17;;210:27;-1:-1;200:2;;251:1;248;241:12;200:2;288:6;275:20;310:65;325:49;367:6;325:49;;;310:65;;;301:74;;395:6;388:5;381:21;431:4;423:6;419:17;464:4;457:5;453:16;499:3;490:6;485:3;481:16;478:25;475:2;;;516:1;513;506:12;475:2;526:41;560:6;555:3;550;526:41;;;193:380;;;;;;;;581:703;;;;739:2;727:9;718:7;714:23;710:32;707:2;;;755:1;752;745:12;707:2;790:1;807:53;852:7;832:9;807:53;;;797:63;;769:97;925:2;914:9;910:18;897:32;949:18;941:6;938:30;935:2;;;981:1;978;971:12;935:2;1001:63;1056:7;1047:6;1036:9;1032:22;1001:63;;;991:73;;876:194;1129:2;1118:9;1114:18;1101:32;1153:18;1145:6;1142:30;1139:2;;;1185:1;1182;1175:12;1139:2;1205:63;1260:7;1251:6;1240:9;1236:22;1205:63;;;1195:73;;1080:194;701:583;;;;;;1291:110;1364:31;1389:5;1364:31;;;1359:3;1352:44;1346:55;;;1489:892;;1670:77;1741:5;1670:77;;;1765:6;1760:3;1753:19;1789:4;1784:3;1780:14;1773:21;;1837:3;1879:4;1871:6;1867:17;1862:3;1858:27;1905:79;1978:5;1905:79;;;2005:1;1990:352;2015:6;2012:1;2009:13;1990:352;;;2077:9;2071:4;2067:20;2062:3;2055:33;2103:104;2202:4;2193:6;2187:13;2103:104;;;2095:112;;2224:83;2300:6;2224:83;;;2330:4;2321:14;;;;;2214:93;-1:-1;2037:1;2030:9;1990:352;;;-1:-1;2355:4;;1649:732;-1:-1;;;;;;1649:732;2389:292;;2487:35;2516:5;2487:35;;;2539:6;2534:3;2527:19;2551:63;2607:6;2600:4;2595:3;2591:14;2584:4;2577:5;2573:16;2551:63;;;2646:29;2668:6;2646:29;;;2626:50;;;2639:4;2626:50;;2467:214;-1:-1;;;2467:214;2689:296;2844:2;2832:15;;2881:66;2876:2;2867:12;;2860:88;2976:2;2967:12;;2825:160;3068:979;3276:22;;3068:979;;3209:4;3200:14;;;3310:61;3204:3;3276:22;3310:61;;;3229:154;3459:4;3452:5;3448:16;3442:23;3510:3;3504:4;3500:14;3493:4;3488:3;3484:14;3477:38;3530:68;3593:4;3580:11;3530:68;;;3522:76;;3393:217;3697:4;3690:5;3686:16;3680:23;3748:3;3742:4;3738:14;3731:4;3726:3;3722:14;3715:38;3768:68;3831:4;3818:11;3768:68;;;3760:76;;3620:228;3929:4;3922:5;3918:16;3912:23;3947:62;4003:4;3998:3;3994:14;3981:11;3947:62;;;-1:-1;4038:4;3182:865;-1:-1;;;3182:865;4054:110;4127:31;4152:5;4127:31;;4171:193;4279:2;4264:18;;4293:61;4268:9;4327:6;4293:61;;;4250:114;;;;;4371:433;4575:2;4589:47;;;4560:18;;4650:144;4560:18;4780:6;4650:144;;4811:387;4992:2;5006:47;;;4977:18;;5067:121;4977:18;5067:121;;5205:256;5267:2;5261:9;5293:17;;;5368:18;5353:34;;5389:22;;;5350:62;5347:2;;;5425:1;5422;5415:12;5347:2;5441;5434:22;5245:216;;-1:-1;5245:216;5468:259;;5612:18;5604:6;5601:30;5598:2;;;5644:1;5641;5634:12;5598:2;-1:-1;5717:4;5688;5665:17;;;;-1:-1;;5661:33;5707:15;;5535:192;5736:144;5868:4;5856:17;;5837:43;5889:130;6002:12;;5986:33;6275:105;;6467:42;6456:54;;6344:31;6439:76;6721:145;6802:6;6797:3;6792;6779:30;-1:-1;6858:1;6840:16;;6833:27;6772:94;6875:268;6940:1;6947:101;6961:6;6958:1;6955:13;6947:101;;;7028:11;;;7022:18;7009:11;;;7002:39;6983:2;6976:10;6947:101;;;7063:6;7060:1;7057:13;7054:2;;;7128:1;7119:6;7114:3;7110:16;7103:27;7054:2;6924:219;;;;;7151:97;7239:2;7219:14;-1:-1;;7215:28;;7199:49",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.5.0 <0.9.0;\npragma experimental ABIEncoderV2;\n\n\n\ncontract Certification {\n    address constant SENDER = 0x68FFD6C6695E64fDe44cF491cb4619E05D592C2c;\n    \n    \n    address public owner;\n\n    struct Certificate {\n        address to;\n        string name;\n        string competitionName;\n        uint256 timestamp;\n    }\n    Certificate[] certificates;\n\n    constructor () public {\n        owner = msg.sender;\n    }\n\n    function issueCertificate(address to, string memory name, string memory competitionName) public {\n        require(msg.sender == SENDER, \"You cannot issue certificates\");\n\n        certificates.push(Certificate(to, name, competitionName, block.timestamp));\n    }\n\n    function viewCertificates() public view returns (Certificate[] memory)\n    {\n        return certificates;\n    }\n\n}",
+  "sourcePath": "/Volumes/Personal/Projects/blockchain/BlockchainCertification/contracts/Certification.sol",
+  "ast": {
+    "absolutePath": "/Volumes/Personal/Projects/blockchain/BlockchainCertification/contracts/Certification.sol",
+    "exportedSymbols": {
+      "Certification": [
+        68
+      ]
+    },
+    "id": 69,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:31:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "64:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 68,
+        "linearizedBaseContracts": [
+          68
+        ],
+        "name": "Certification",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 5,
+            "name": "SENDER",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "130:68:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "130:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307836384646443643363639354536346644653434634634393163623436313945303544353932433263",
+              "id": 4,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "156:42:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              },
+              "value": "0x68FFD6C6695E64fDe44cF491cb4619E05D592C2c"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "214:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "214:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Certification.Certificate",
+            "id": 16,
+            "members": [
+              {
+                "constant": false,
+                "id": 9,
+                "name": "to",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "270:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "270:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 11,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "290:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 10,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "290:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13,
+                "name": "competitionName",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "311:22:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 12,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "311:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "343:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "343:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Certificate",
+            "nodeType": "StructDefinition",
+            "scope": 68,
+            "src": "241:126:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 19,
+            "name": "certificates",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "372:26:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage",
+              "typeString": "struct Certification.Certificate[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 17,
+                "name": "Certificate",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 16,
+                "src": "372:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Certificate_$16_storage_ptr",
+                  "typeString": "struct Certification.Certificate"
+                }
+              },
+              "id": 18,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "372:13:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage_ptr",
+                "typeString": "struct Certification.Certificate[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 27,
+              "nodeType": "Block",
+              "src": "427:35:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 25,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 22,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "437:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 23,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 83,
+                        "src": "445:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 24,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "445:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "437:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 26,
+                  "nodeType": "ExpressionStatement",
+                  "src": "437:18:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 28,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 20,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "417:2:0"
+            },
+            "returnParameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "427:0:0"
+            },
+            "scope": 68,
+            "src": "405:57:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 57,
+              "nodeType": "Block",
+              "src": "564:164:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 41,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 38,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 83,
+                            "src": "582:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 39,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "582:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 40,
+                          "name": "SENDER",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5,
+                          "src": "596:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "582:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f752063616e6e6f7420697373756520636572746966696361746573",
+                        "id": 42,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "604:31:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4ce64dda12ff636605d618853b1b2d521a230464f499efddab56b170d35f494b",
+                          "typeString": "literal_string \"You cannot issue certificates\""
+                        },
+                        "value": "You cannot issue certificates"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4ce64dda12ff636605d618853b1b2d521a230464f499efddab56b170d35f494b",
+                          "typeString": "literal_string \"You cannot issue certificates\""
+                        }
+                      ],
+                      "id": 37,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        86,
+                        87
+                      ],
+                      "referencedDeclaration": 87,
+                      "src": "574:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "574:62:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "574:62:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 49,
+                            "name": "to",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 30,
+                            "src": "677:2:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 50,
+                            "name": "name",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 32,
+                            "src": "681:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 51,
+                            "name": "competitionName",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 34,
+                            "src": "687:15:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 52,
+                              "name": "block",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 73,
+                              "src": "704:5:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_block",
+                                "typeString": "block"
+                              }
+                            },
+                            "id": 53,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "timestamp",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "704:15:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 48,
+                          "name": "Certificate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "665:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Certificate_$16_storage_ptr_$",
+                            "typeString": "type(struct Certification.Certificate storage pointer)"
+                          }
+                        },
+                        "id": 54,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "665:55:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Certificate_$16_memory",
+                          "typeString": "struct Certification.Certificate memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Certificate_$16_memory",
+                          "typeString": "struct Certification.Certificate memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 45,
+                        "name": "certificates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "647:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage",
+                          "typeString": "struct Certification.Certificate storage ref[] storage ref"
+                        }
+                      },
+                      "id": 47,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "647:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Certificate_$16_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Certification.Certificate storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "647:74:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "647:74:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 58,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "issueCertificate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "494:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "494:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "506:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "506:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34,
+                  "name": "competitionName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "526:29:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 33,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "526:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "493:63:0"
+            },
+            "returnParameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "564:0:0"
+            },
+            "scope": 68,
+            "src": "468:260:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 66,
+              "nodeType": "Block",
+              "src": "809:36:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 64,
+                    "name": "certificates",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19,
+                    "src": "826:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage",
+                      "typeString": "struct Certification.Certificate storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 63,
+                  "id": 65,
+                  "nodeType": "Return",
+                  "src": "819:19:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 67,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "viewCertificates",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 59,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "759:2:0"
+            },
+            "returnParameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 62,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "783:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Certificate_$16_memory_$dyn_memory_ptr",
+                    "typeString": "struct Certification.Certificate[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 60,
+                      "name": "Certificate",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 16,
+                      "src": "783:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Certificate_$16_storage_ptr",
+                        "typeString": "struct Certification.Certificate"
+                      }
+                    },
+                    "id": 61,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "783:13:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage_ptr",
+                      "typeString": "struct Certification.Certificate[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "782:22:0"
+            },
+            "scope": 68,
+            "src": "734:111:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 69,
+        "src": "101:747:0"
+      }
+    ],
+    "src": "32:816:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Volumes/Personal/Projects/blockchain/BlockchainCertification/contracts/Certification.sol",
+    "exportedSymbols": {
+      "Certification": [
+        68
+      ]
+    },
+    "id": 69,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:31:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "64:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 68,
+        "linearizedBaseContracts": [
+          68
+        ],
+        "name": "Certification",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 5,
+            "name": "SENDER",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "130:68:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "130:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307836384646443643363639354536346644653434634634393163623436313945303544353932433263",
+              "id": 4,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "156:42:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              },
+              "value": "0x68FFD6C6695E64fDe44cF491cb4619E05D592C2c"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "214:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "214:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Certification.Certificate",
+            "id": 16,
+            "members": [
+              {
+                "constant": false,
+                "id": 9,
+                "name": "to",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "270:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "270:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 11,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "290:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 10,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "290:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13,
+                "name": "competitionName",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "311:22:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 12,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "311:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15,
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 16,
+                "src": "343:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "343:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Certificate",
+            "nodeType": "StructDefinition",
+            "scope": 68,
+            "src": "241:126:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 19,
+            "name": "certificates",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "372:26:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage",
+              "typeString": "struct Certification.Certificate[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 17,
+                "name": "Certificate",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 16,
+                "src": "372:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Certificate_$16_storage_ptr",
+                  "typeString": "struct Certification.Certificate"
+                }
+              },
+              "id": 18,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "372:13:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage_ptr",
+                "typeString": "struct Certification.Certificate[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 27,
+              "nodeType": "Block",
+              "src": "427:35:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 25,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 22,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "437:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 23,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 83,
+                        "src": "445:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 24,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "445:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "437:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 26,
+                  "nodeType": "ExpressionStatement",
+                  "src": "437:18:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 28,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 20,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "417:2:0"
+            },
+            "returnParameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "427:0:0"
+            },
+            "scope": 68,
+            "src": "405:57:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 57,
+              "nodeType": "Block",
+              "src": "564:164:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 41,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 38,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 83,
+                            "src": "582:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 39,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "582:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 40,
+                          "name": "SENDER",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5,
+                          "src": "596:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "582:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f752063616e6e6f7420697373756520636572746966696361746573",
+                        "id": 42,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "604:31:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4ce64dda12ff636605d618853b1b2d521a230464f499efddab56b170d35f494b",
+                          "typeString": "literal_string \"You cannot issue certificates\""
+                        },
+                        "value": "You cannot issue certificates"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4ce64dda12ff636605d618853b1b2d521a230464f499efddab56b170d35f494b",
+                          "typeString": "literal_string \"You cannot issue certificates\""
+                        }
+                      ],
+                      "id": 37,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        86,
+                        87
+                      ],
+                      "referencedDeclaration": 87,
+                      "src": "574:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "574:62:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "574:62:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 49,
+                            "name": "to",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 30,
+                            "src": "677:2:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 50,
+                            "name": "name",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 32,
+                            "src": "681:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 51,
+                            "name": "competitionName",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 34,
+                            "src": "687:15:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 52,
+                              "name": "block",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 73,
+                              "src": "704:5:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_block",
+                                "typeString": "block"
+                              }
+                            },
+                            "id": 53,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "timestamp",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "704:15:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 48,
+                          "name": "Certificate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "665:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Certificate_$16_storage_ptr_$",
+                            "typeString": "type(struct Certification.Certificate storage pointer)"
+                          }
+                        },
+                        "id": 54,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "665:55:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Certificate_$16_memory",
+                          "typeString": "struct Certification.Certificate memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Certificate_$16_memory",
+                          "typeString": "struct Certification.Certificate memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 45,
+                        "name": "certificates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "647:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage",
+                          "typeString": "struct Certification.Certificate storage ref[] storage ref"
+                        }
+                      },
+                      "id": 47,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "647:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Certificate_$16_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Certification.Certificate storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "647:74:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "647:74:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 58,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "issueCertificate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "494:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "494:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "506:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "506:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34,
+                  "name": "competitionName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "526:29:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 33,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "526:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "493:63:0"
+            },
+            "returnParameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "564:0:0"
+            },
+            "scope": 68,
+            "src": "468:260:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 66,
+              "nodeType": "Block",
+              "src": "809:36:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 64,
+                    "name": "certificates",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19,
+                    "src": "826:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage",
+                      "typeString": "struct Certification.Certificate storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 63,
+                  "id": 65,
+                  "nodeType": "Return",
+                  "src": "819:19:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 67,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "viewCertificates",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 59,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "759:2:0"
+            },
+            "returnParameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 62,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "783:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Certificate_$16_memory_$dyn_memory_ptr",
+                    "typeString": "struct Certification.Certificate[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 60,
+                      "name": "Certificate",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 16,
+                      "src": "783:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Certificate_$16_storage_ptr",
+                        "typeString": "struct Certification.Certificate"
+                      }
+                    },
+                    "id": 61,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "783:13:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Certificate_$16_storage_$dyn_storage_ptr",
+                      "typeString": "struct Certification.Certificate[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "782:22:0"
+            },
+            "scope": 68,
+            "src": "734:111:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 69,
+        "src": "101:747:0"
+      }
+    ],
+    "src": "32:816:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x4A6b1D2fB52e054806c8543C73d2E41F9D64cC4e",
+      "transactionHash": "0x214da52fef6f9eaa7b289aa7de3107be01bb79dd14a8fdfe13a9b4b7c1ee2735"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2023-04-09T16:11:58.560Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
