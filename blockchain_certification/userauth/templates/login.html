@@ -1,0 +1,20 @@
+<h4>Blockchain Certification</h4>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% if messages %}
+  {% for message in messages %}
+       {{ message }}<br>
+  {% endfor %}
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" />
+    <br>
+    <input type="password" name="password" placeholder="Password" />
+    <br>
+    <button type="submit">Log In</button>
+</form>

@@ -1,0 +1,38 @@
+<h4>Blockchain Certification</h4>
+{% if user.is_authenticated %}
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
+{% endif %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+{% if messages %}
+  {% for message in messages %}
+       {{ message }}<br>
+  {% endfor %}
+{% endif %}
+
+
+
+<a href="{% url 'issue_certificate' %}">Issue Certificate</a>
+<br>
+<a href="">View Certificate</a>
+<br>
+<a href="">View my Certifications</a>
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="address" placeholder="Address">
+    <br>
+    <input type="text" name="name" placeholder="Name">
+    <br>
+    <input type="text" name="competitionName" placeholder="Competition Name">
+    <br>
+    <input type="submit">
+</form>
