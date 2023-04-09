@@ -4,8 +4,6 @@
         {% csrf_token %}
         <button type="submit">Log out</button>
     </form>
-{% else %}
-<a href="{% url 'login' %}">Login</a>
 {% endif %}
 
 <br>
@@ -25,3 +23,10 @@
 <br>
 <a href="{% url 'view' %}">View Certificate</a>
 <br>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="id" placeholder="Credential ID">
+    <br>
+    <input type="submit">
+</form>
