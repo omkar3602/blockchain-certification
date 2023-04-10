@@ -2,6 +2,8 @@ import json
 from web3 import Web3, HTTPProvider
 from dotenv import load_dotenv
 import os
+import web3.exceptions as exceptions
+
 def issue_certificate(address, name, competitionName):
     try:
         load_dotenv()
@@ -21,7 +23,7 @@ def issue_certificate(address, name, competitionName):
 
         nonce = web3.eth.get_transaction_count(caller)
 
-        compiled_contract_path = 'mainapp/contracts/Certification.json'
+        compiled_contract_path = 'utils/contracts/Certification.json'
         
         deployed_contract_address = os.getenv('DEPLOYED_CONTRACT_ADDRESS')
         
@@ -45,8 +47,13 @@ def issue_certificate(address, name, competitionName):
 
 
         return tx_receipt
+    except exceptions.Web3Exception as e:
+        print(e)
+        return -1
     except ValueError as e:
         print(e)
+        return -1
+
 
 
 
@@ -65,7 +72,7 @@ def view_certificate(id):
         else:
             print("Connection Failed")
 
-        compiled_contract_path = 'mainapp/contracts/Certification.json'
+        compiled_contract_path = 'utils/contracts/Certification.json'
         
         deployed_contract_address = os.getenv('DEPLOYED_CONTRACT_ADDRESS')
         
@@ -84,5 +91,9 @@ def view_certificate(id):
 
         from datetime import datetime
         return [certificate[1]['name'], certificate[1]['competitionName'], datetime.utcfromtimestamp(ts).strftime('%d-%m-%Y')]
+    except exceptions.Web3Exception as e:
+        print(e)
+        return -1
     except ValueError as e:
         print(e)
+        return -1

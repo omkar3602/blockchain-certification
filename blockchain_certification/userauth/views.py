@@ -11,10 +11,15 @@ def login_user(request):
         data = request.POST
         username = data['username']
         password = data['password']
+        next_url = data['next_url']
+
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            if next_url == '':
+                return redirect('home')
+            else:
+                return redirect(next_url)
         else:
             messages.error(request, "Couldn't Login. Please check your credentials.")
     return render(request, 'login.html')

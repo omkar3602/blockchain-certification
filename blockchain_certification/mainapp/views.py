@@ -1,20 +1,26 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from . import utils
+from django.contrib.auth.decorators import login_required
+from utils.decorator import login_required_message
+
+from utils import blockchain
+
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
 
-
+@login_required_message(message="Please log in, in order to issue certificates.")
+@login_required
 def issue_certificate(request):
     if request.method == 'POST':
         address = request.POST['address']
         name = request.POST['name']
         competitionName = request.POST['competitionName']
-        print(type(address), address)
-        receipt = utils.issue_certificate(address, name, competitionName)
-
-        messages.info(request, 'Certificate Issued Successfully at Credential ID: ' + receipt['transactionHash'].hex())
+        receipt = blockchain.issue_certificate(address, name, competitionName)
+        if receipt == -1:
+            messages.info(request, 'Certificate Issuing Failed. Please check the details and try again.')
+        else:
+            messages.info(request, 'Certificate Issued Successfully at Credential ID: ' + receipt['transactionHash'].hex())
         return render(request, 'issue_certificate.html')
     return render(request, 'issue_certificate.html')
 
@@ -35,6 +41,5 @@ def view(request):
 
 def certificate(request, id):
 
-    certificate = utils.view_certificate(id)
-
+    certificate = blockchain.view_certificate(id)
     return render(request, 'certificate.html', {'certificate': certificate})
