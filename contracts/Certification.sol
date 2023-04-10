@@ -5,7 +5,7 @@ pragma experimental ABIEncoderV2;
 
 
 contract Certification {
-    address constant SENDER = 0x68FFD6C6695E64fDe44cF491cb4619E05D592C2c;
+    address constant SENDER = 0x1583fF370ac71Db02E085cc98Da1613fcFD21Ace;
     
     
     address public owner;
@@ -15,6 +15,7 @@ contract Certification {
         string name;
         string competitionName;
         uint256 timestamp;
+        string email;
     }
     Certificate[] certificates;
 
@@ -22,10 +23,10 @@ contract Certification {
         owner = msg.sender;
     }
 
-    function issueCertificate(address to, string memory name, string memory competitionName) public {
+    function issueCertificate(address to, string memory name, string memory competitionName, string memory email) public {
         require(msg.sender == SENDER, "You cannot issue certificates");
 
-        certificates.push(Certificate(to, name, competitionName, block.timestamp));
+        certificates.push(Certificate(to, name, competitionName, block.timestamp, email));
     }
 
     function viewCertificates() public view returns (Certificate[] memory)

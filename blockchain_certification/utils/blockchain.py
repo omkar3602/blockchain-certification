@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 import web3.exceptions as exceptions
 
-def issue_certificate(address, name, competitionName):
+def issue_certificate(address, name, competitionName, email):
     try:
         load_dotenv()
         blockchain_address = os.getenv('BLOCKCHAIN_ADDRESS')
@@ -36,8 +36,7 @@ def issue_certificate(address, name, competitionName):
         
 
         Chain_id = web3.eth.chain_id
-
-        call_function = contract.functions.issueCertificate(address, name, competitionName).build_transaction({"chainId": Chain_id, "from": caller, "nonce": nonce})
+        call_function = contract.functions.issueCertificate(address, name, competitionName, email).build_transaction({"chainId": Chain_id, "from": caller, "nonce": nonce})
 
         signed_tx = web3.eth.account.sign_transaction(call_function, private_key=private_key)
 
@@ -90,7 +89,7 @@ def view_certificate(id):
         ts = web3.eth.get_block(web3.eth.get_transaction(id).blockNumber).timestamp
 
         from datetime import datetime
-        return [certificate[1]['name'], certificate[1]['competitionName'], datetime.utcfromtimestamp(ts).strftime('%d-%m-%Y')]
+        return [certificate[1]['name'], certificate[1]['competitionName'], datetime.utcfromtimestamp(ts).strftime('%d-%m-%Y'), certificate[1]['email']]
     except exceptions.Web3Exception as e:
         print(e)
         return -1
