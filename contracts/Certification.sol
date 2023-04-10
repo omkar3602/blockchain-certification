@@ -34,4 +34,17 @@ contract Certification {
         return certificates;
     }
 
+    function viewCertificateByAddress(address to) public view returns(Certificate[] memory)
+    {
+        Certificate[] memory result = new Certificate[](certificates.length);
+        uint256 counter = 0;
+        for (uint256 i = 0; i < certificates.length; i++) {
+            if (certificates[i].to == to) {
+                result[counter] = certificates[i];
+                counter++;
+            }
+        }
+        return result;
+    }
+
 }

@@ -41,6 +41,9 @@ User
 </form>
 {% if certificates %}
 <h3>Issued certificates</h3>
+{% for certificate in certificates %}
+    <p>{{ certificate }}</p>
+{% endfor %}
 {% endif %}
 
 

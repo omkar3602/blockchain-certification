@@ -34,4 +34,6 @@ User
 <br>
 
 <h3>All certificates</h3>
-{{ certificates }}
+{% for certificate in certificates %}
+    <p>{{ certificate }}</p>
+{% endfor %}

@@ -51,7 +51,7 @@ def certificate(request, id):
 def issued_certificates(request):
     if request.method == 'POST':
         address = request.POST['address']
-        # certificates = blockchain.view_certificates(address)
+        certificates = blockchain.view_certificate_by_address(address)
         if certificates == -1:
             messages.info(request, 'No certificates found for the given address.')
             return render(request, 'issued_certificates.html')

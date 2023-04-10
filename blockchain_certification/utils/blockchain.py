@@ -127,3 +127,36 @@ def view_certificate(id):
     except ValueError as e:
         print(e)
         return -1
+    
+def view_certificate_by_address(address):
+    try:
+        load_dotenv()
+        blockchain_address = os.getenv('BLOCKCHAIN_ADDRESS')
+        
+        web3 = Web3(HTTPProvider(blockchain_address))
+        
+        if web3.is_connected():
+            print("-" * 50)
+            print("Connection Successful")
+            print("-" * 50)
+        else:
+            print("Connection Failed")
+
+        compiled_contract_path = 'utils/contracts/Certification.json'
+        
+        deployed_contract_address = os.getenv('DEPLOYED_CONTRACT_ADDRESS')
+        
+        with open(compiled_contract_path) as file:
+            contract_json = json.load(file) 
+            
+            contract_abi = contract_json['abi']
+        
+        contract = web3.eth.contract(address = deployed_contract_address, abi = contract_abi)
+        
+        return contract.functions.viewCertificateByAddress(address).call()
+    except exceptions.Web3Exception as e:
+        print(e)
+        return -1
+    except ValueError as e:
+        print(e)
+        return -1
