@@ -33,9 +33,5 @@ User
 <a href="{% url 'issued_certificates' %}">Issued Certificates</a>
 <br>
 
-<form method="POST">
-    {% csrf_token %}
-    <input type="text" name="id" placeholder="Credential ID">
-    <br>
-    <input type="submit">
-</form>
+<h3>All certificates</h3>
+{{ certificates }}

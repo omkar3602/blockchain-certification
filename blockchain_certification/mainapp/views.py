@@ -29,12 +29,11 @@ def issue_certificate(request):
         return render(request, 'issue_certificate.html')
     return render(request, 'issue_certificate.html')
 
-
-# For view_all in utils.py 
-# hash = input("Enter the hash of the block: ")
-# info = contract.functions.viewCertificates().call(block_identifier=hash)
-# print(info)
-
+@login_required_message(message="Please log in, in order to view all certificates.")
+@login_required
+def view_all(request):
+    certificates = blockchain.view_all()
+    return render(request, 'view_all.html', {'certificates': certificates})
 
 
 def view(request):
@@ -48,3 +47,15 @@ def certificate(request, id):
 
     certificate = blockchain.view_certificate(id)
     return render(request, 'certificate.html', {'certificate': certificate})
+
+def issued_certificates(request):
+    if request.method == 'POST':
+        address = request.POST['address']
+        # certificates = blockchain.view_certificates(address)
+        if certificates == -1:
+            messages.info(request, 'No certificates found for the given address.')
+            return render(request, 'issued_certificates.html')
+        else:
+            return render(request, 'issued_certificates.html', {'certificates': certificates})
+    certificates = False
+    return render(request, 'issued_certificates.html', {'certificates': certificates})
