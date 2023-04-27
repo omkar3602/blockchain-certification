@@ -64,7 +64,6 @@
         <div class="hidden md:flex items-center space-x-3 ">
 
         {% if user.is_authenticated %}
-        <h1 class="px-4 text-xl font-bold font-nunito">Hello, {{ user.fullname }}</h1>
                 
           <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}

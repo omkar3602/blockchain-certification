@@ -5,26 +5,23 @@
 
 {% block content %}
 
-{% if certificate == -1 %}
-Invalid Certificate ID.
-{% else %}
 <div class="w-screen h-screen p-5 text-center border-8 border-solid border-[#5e609f] ml-1/5 outer-border">
     <div class="w-full h-full p-5 text-center border-4 border-dotted border-[#5e609f] inner-dotted-border">
            <span class="text-5xl font-bold text-[#5e609f] certification">Certificate of Participation</span>
            <br><br>
            <span class="text-2xl certify"><i>This is to certify that</i></span>
            <br><br>
-           <span class="text-3xl text-green-500 name"><b>{{ certificate.name }}</b></span><br/><br/>
+           <span class="text-3xl text-green-500 name"><b>{{ certificate.0 }}</b></span><br/><br/>
            <span class="text-2xl certify"><i>has successfully participated in</i></span> <br/><br/>
-           <span class="text-3xl fs-30">{{ certificate.competitionName }}</span> <br/><br/>
+           <span class="text-3xl fs-30">{{ certificate.1 }}</span> <br/><br/>
            <!-- <span class="text-xl fs-20">with score of <b>A+</b></span>  -->
            <br/><br/><br/><br/>
            <span class="text-3xl certify"><i>dated</i></span><br>
           
-          <span class="text-2xl fs-30">{{ certificate.timestamp }}</span>
+          <span class="text-2xl fs-30">{{ certificate.2 }}</span>
     
     </div>
     </div>
-{% endif %}
+
 
 {% endblock content %}

@@ -55,7 +55,7 @@
                 <thead class="bg-white border-b">
                   <tr>                 
                     <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
-                      ID
+                      Wallet ID
                     </th>
                     <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
                       Issued to
@@ -66,9 +66,6 @@
                     <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
                       Issued on
                     </th>
-                    <th scope="col" class="text-md font-bold  text-gray-900 px-6 py-4 text-left">
-                      Email
-                    </th>
                   </tr>
                 </thead>
                 
@@ -76,20 +73,17 @@
                 <tbody>
                   <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">                  
                     <td class="px-6 py-4 text-sm font-medium text-gray-900 cursor-pointer">
-                      {{ certificate.to }}
+                      {{ certificate.0 }}
                     </td>
                     <td class="text-sm text-gray-900 font-normal px-6 py-4">
-                      {{ certificate.name }}
+                      {{ certificate.1 }}
                     </td>
                     <td class="text-sm text-gray-900 font-normal px-6 py-4">
-                      {{ certificate.competitionName }}
+                      {{ certificate.2 }}
                     </td>
                     <td class="text-sm text-gray-900 font-normal px-6 py-4">
-                      {{ certificate.timestamp }}
-                    </td>
-                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
-                      {{ certificate.email }}
-                    </td>                    
+                      {{ certificate.3 }}
+                    </td>            
                   </tr>                
                   
                 </tbody>
