@@ -1,22 +1,66 @@
-<h4>Blockchain Certification</h4>
-<br>
-<br>
-<br>
-<br>
-<br>
-{% if messages %}
-  {% for message in messages %}
-       {{ message }}<br>
-  {% endfor %}
-{% endif %}
+{% extends 'login_base.html' %}
+{% load static %}
 
-<form method="POST">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="Username" />
-    <br>
-    <input type="password" name="password" placeholder="Password" />
-    <br>
-    <input type="hidden" name="next_url" value="{{ request.GET.next }}"/>
+{% block title %}Login{% endblock title %}
 
-    <button type="submit">Log In</button>
-</form>
+{% block content %}
+    <div class="w-full h-screen bg-gradient-to-tr from-blue-200 via-indigo-200 to-pink-200 bg-cover bg-center text-nunito">
+    <div class="w-full h-full flex flex-col justify-center items-center backdrop-blur-sm">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div class="bg-white px-6 py-8 rounded-3xl shadow-md text-black w-full border-2 border-[#5e609f]">
+                <div class="flex justify-center flex-row pb-5">
+                    <a href="{% url 'home' %}" class="inline text-center font-bold text-3xl">
+  {% comment %} <img src="{% static 'images/logo.png' %}" class="inline" height="40px" width="40px">  {% endcomment %}
+                      BLOCKCHAIN CERTIFICATION
+                </a>
+                </div>
+                {% comment %} <h1 class="mt-6 mb-3 text-3xl font-bold text-center font-nunito">Choose your role</h1> {% endcomment %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div>
+                        <!-- <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                        placeholder="Full Name" /> -->
+
+                        <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="username"
+                            placeholder="Username" />
+
+                        <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                            name="password" placeholder="Password" />
+                        <!-- <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="confirm_password" placeholder="Confirm Password" /> -->
+                        
+                        <input type="hidden" name="next_url" value="{{ request.GET.next }}"/>
+
+                        <button type="submit"
+                            class="w-full text-center py-3 rounded bg-[#5e609f] text-white text-xl font-bold hover:bg-black focus:outline-none my-1">
+                            Log In</button>
+
+                    </div>
+                </form>
+                {% comment %} <div class="text-light_grey text-center">
+                    Create an account
+                    <a class="no-underline border-b border-blue text-blue" href="{% url 'signup' %}">
+                        Sign up.
+                    </a>
+                </div> {% endcomment %}
+                {% comment %} <div class="text-light_grey text-center">
+                    
+                    <a class="no-underline border-b border-blue text-blue" href="{% url 'password_reset' %}">
+                        Forgot Password?
+                    </a>
+                </div> {% endcomment %}
+                
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script>
+    function showHideDiv(val) {
+
+        document.getElementById('form').style.display = 'block';
+
+    }
+</script>
+{% endblock content %}

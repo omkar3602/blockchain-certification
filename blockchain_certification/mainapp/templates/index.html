@@ -1,30 +1,58 @@
-<h4>Blockchain Certification</h4>
-{% if user.is_authenticated %}
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Log out</button>
-    </form>
-{% else %}
-<a href="{% url 'login' %}">Login</a>
-{% endif %}
+{% extends 'base.html' %}
+{% load static %}
 
-<br>
-<br>
-<br>
-<br>
-<br>
-{% if messages %}
-  {% for message in messages %}
-       {{ message }}<br>
-  {% endfor %}
-{% endif %}
+{% block title %}Blockchain Certification{% endblock title %}
 
-<a href={% url 'home' %}>Home</a>
+{% block content %}
+
+<div class="bg-gradient-to-tr from-blue-200 via-indigo-200 to-pink-200">
+  <br>
 <br>
 <br>
-Admin
 <br>
-<a href="{% url 'issue_certificate' %}">Issue Certificate</a>
+<br>
+<div class="flex justify-evenly">
+<div class="bg-white px-6 py-8 rounded-3xl shadow-md text-black w-1/3 border-2 border-[#5e609f]">
+  <div class="flex justify-center flex-row pb-5">
+      <a href="{% url 'home' %}" class="inline text-center font-bold text-3xl">
+{% comment %} <img src="{% static 'images/logo.png' %}" class="inline" height="40px" width="40px">  {% endcomment %}
+        Admin
+  </a>
+  </div>
+  {% comment %} <h1 class="mt-6 mb-3 text-3xl font-bold text-center font-nunito">Choose your role</h1> {% endcomment %}
+ 
+    <div>        
+        <a href="{% url 'issue_certificate' %}"
+            class="w-full text-center block py-3 rounded bg-[#5e609f] text-white text-xl font-bold hover:bg-black focus:outline-none my-1">
+            Issue Certificate</a>
+        <a href="{% url 'view_all' %}"
+            class="w-full text-center block py-3 rounded bg-[#5e609f] text-white text-xl font-bold hover:bg-black focus:outline-none my-1">
+            View All Certificates</a>
+    </div>
+  
+</div>
+<div class="bg-white px-6 py-8 rounded-3xl shadow-md text-black w-1/3 border-2 border-[#5e609f]">
+  <div class="flex justify-center flex-row pb-5">
+      <a href="{% url 'home' %}" class="inline text-center font-bold text-3xl">
+{% comment %} <img src="{% static 'images/logo.png' %}" class="inline" height="40px" width="40px">  {% endcomment %}
+        User
+  </a>
+  </div>
+  {% comment %} <h1 class="mt-6 mb-3 text-3xl font-bold text-center font-nunito">Choose your role</h1> {% endcomment %}
+ 
+    <div>        
+        <a href="{% url 'view' %}"
+            class="w-full text-center block py-3 rounded bg-[#5e609f] text-white text-xl font-bold hover:bg-black focus:outline-none my-1">
+            View Certificate</a>
+        <a href="{% url 'issued_certificates' %}"
+            class="w-full text-center block py-3 rounded bg-[#5e609f] text-white text-xl font-bold hover:bg-black focus:outline-none my-1">
+            Issued Certificates</a>
+    </div>
+  
+</div>
+
+</div>
+{% comment %} <a href="{% url 'issue_certificate' %}">Issue Certificate</a>
 <br>
 <a href="{% url 'view_all' %}">View all Certificates</a>
 <br>
@@ -34,4 +62,17 @@ User
 <a href="{% url 'view' %}">View Certificate</a>
 <br>
 <a href="{% url 'issued_certificates' %}">Issued Certificates</a>
+<br> {% endcomment %}
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+{% endblock content %}

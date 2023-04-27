@@ -1,41 +1,129 @@
-<h4>Blockchain Certification</h4>
-{% if user.is_authenticated %}
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Log out</button>
-    </form>
-{% endif %}
+{% extends 'base.html' %}
+{% load static %}
 
+{% block title %}Issued Certificates{% endblock title %}
+
+{% block content %}
+
+<div class="bg-gradient-to-tr from-blue-200 via-indigo-200 to-pink-200">
+  <br>
 <br>
 <br>
 <br>
 <br>
-<br>
-{% if messages %}
-  {% for message in messages %}
-       {{ message }}<br>
-  {% endfor %}
-{% endif %}
+<div class="flex justify-evenly">
+<div class="bg-white px-6 py-8 rounded-3xl shadow-md text-black w-1/3 border-2 border-[#5e609f]">
+  <div class="flex justify-center flex-row pb-5">
+      <a href="{% url 'issued_certificates' %}" class="inline text-center font-bold text-3xl">
+{% comment %} <img src="{% static 'images/logo.png' %}" class="inline" height="40px" width="40px">  {% endcomment %}
+        View Issued Certificates
+  </a>
+  </div>
+  {% comment %} <h1 class="mt-6 mb-3 text-3xl font-bold text-center font-nunito">Choose your role</h1> {% endcomment %}
+ 
+    <div>  
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <!-- <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                placeholder="Full Name" /> -->
+
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="address"
+                    placeholder=" Address " />
+
+                <button type="submit"
+                    class="w-full text-center py-3 rounded bg-[#5e609f] text-white text-xl font-bold hover:bg-black focus:outline-none my-1">
+                    Submit</button>
+
+            </div>
+        </form>      
+        
+    </div>
+  
+</div>
 
 
-<a href={% url 'home' %}>Home</a>
-<br>
-<br>
-Admin
-<br>
-<a href="{% url 'issue_certificate' %}">Issue Certificate</a>
-<br>
-<a href="{% url 'view_all' %}">View all Certificates</a>
-<br>
-<br>
-User
-<br>
-<a href="{% url 'view' %}">View Certificate</a>
-<br>
-<a href="{% url 'issued_certificates' %}">Issued Certificates</a>
-<br>
+</div>
+<div>   
+    
+    <div class="flex flex-col justify-center">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 block sm:px-6 lg:px-8">
+            <div class="overflow-hidden flex justify-center">
+            {% if certificates %}  
+              <table class="table-auto border">
+                <thead class="bg-white border-b">
+                  <tr>                 
+                    <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
+                      ID
+                    </th>
+                    <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
+                      Issued to
+                    </th>
+                    <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
+                      Competition Name
+                    </th>
+                    <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
+                      Issued on
+                    </th>
+                    <th scope="col" class="text-md font-bold  text-gray-900 px-6 py-4 text-left">
+                      Email
+                    </th>
+                  </tr>
+                </thead>
+                
+                {% for certificate in certificates %}
+                <tbody>
+                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">                  
+                    <td class="px-6 py-4 text-sm font-medium text-gray-900 cursor-pointer">
+                      {{ certificate.to }}
+                    </td>
+                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                      {{ certificate.name }}
+                    </td>
+                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                      {{ certificate.competitionName }}
+                    </td>
+                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                      {{ certificate.timestamp }}
+                    </td>
+                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                      {{ certificate.email }}
+                    </td>                    
+                  </tr>                
+                  
+                </tbody>
+                {% endfor %}
 
-<form method="POST">
+              </table>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+    {% comment %} {% if certificates %}
+    <h3>Following are certificates issued to you</h3>
+    {% for certificate in certificates %}
+        <p>{{ certificate }}</p>
+    {% endfor %}
+    {% endif %} {% endcomment %}
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+{% endblock content %}
+
+
+{% comment %} <form method="POST">
     {% csrf_token %}
     <input type="text" name="address" placeholder="Address">
     <br>
@@ -46,7 +134,7 @@ User
 {% for certificate in certificates %}
     <p>{{ certificate }}</p>
 {% endfor %}
-{% endif %}
+{% endif %} {% endcomment %}
 
 
 

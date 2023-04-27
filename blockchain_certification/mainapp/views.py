@@ -30,7 +30,7 @@ def issue_certificate(request):
     return render(request, 'issue_certificate.html')
 
 @login_required_message(message="Please log in, in order to view all certificates.")
-@login_required
+# @login_required
 def view_all(request):
     certificates = blockchain.view_all()
     return render(request, 'view_all.html', {'certificates': certificates})

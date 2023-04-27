@@ -1,0 +1,161 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;500;600900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    nunito: ["Nunito", "sans-serif"],
+                },
+                colors: {
+                    
+                }
+            }
+        }
+    }
+</script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .main_heading {
+        font-size: larger;
+        background-color: red;
+        color: blue;
+      }
+    }
+  </style>
+  <title>{% block title %}{% endblock title %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <nav class="bg-white shadow-lg fixed w-full z-10 py-2">
+    <div class="px-8">
+      <div class="flex sm:justify-between">
+        <div class="flex space-x-7">
+          <div class="sm:flex sm:flex-row space-x-5">
+           
+            <a href="{% url 'home' %}" class="flex items-center py-2">
+          {% comment %} <img src="{% static 'images/logo.png' %}" class="inline" height="40px" width="40px">  {% endcomment %}
+              <span class="font-bold text-2xl">BLOCKCHAIN CERTIFICATION</span>
+            </a>        
+            <div class="hidden sm:flex justify-between items-center hover:bg-gray-300 pt-1.5 pb-0.5 pl-4 pr-4">
+              <a href="{% url 'home' %}" class="font-medium text-md">Home</a>
+            </div>
+          </div> 
+              
+          
+        </div>
+     
+      
+        <div class="hidden md:flex items-center space-x-3 ">
+
+        {% if user.is_authenticated %}
+        <h1 class="px-4 text-xl font-bold font-nunito">Hello, {{ user.fullname }}</h1>
+                
+          <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="py-2 px-2 text-xl font-medium text-white rounded bg-[#4d1354] transition duration-300 " type="submit">Log out</button>
+        </form>
+        {% else %}       
+        <a href="{% url 'login' %}"
+            class="py-2 px-2 text-xl text-[#4d1354] font-bold rounded hover:bg-black hover:text-white transition duration-300">Log
+            In</a>
+          {% comment %} <a href="{% url 'signup' %}"
+            class="py-2 px-2 text-xl font-medium text-white bg-[#4d1354] rounded hover:bg-black transition duration-300">Sign
+            Up</a> {% endcomment %}
+        {% endif %}  
+      </div> 
+        
+      {% comment %} Mobile menu buttons {% endcomment %}
+      <div class="md:hidden flex items-center pl-20 sm:pl-0">
+        <button class="outline-none mobile-menu-button">
+        <svg class=" w-6 h-6 text-gray-500 hover:text-[#5e609f] "
+          x-show="!showMenu"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      </div>
+      
+      </div>
+    </div>
+    <div class="hidden mobile-menu">
+      <ul class="">
+        <li><a href="" class="block text-md px-12 py-4 hover:bg-[#5e609f] transition duration-300">Get Your Score</a></li>
+        <li><a href="" class="block text-md px-12 py-4 hover:bg-[#5e609f] transition duration-300">Leaderboard</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="" class="block text-md px-12 py-4 hover:bg-[#5e609f] transition duration-300">Log out</a></li>
+        {% else %}
+        <li><a href="" class="block text-md px-12 py-4 hover:bg-[#5e609f] transition duration-300">Log in</a></li>
+        <li><a href="" class="block text-md px-12 py-4 hover:bg-[#5e609f] transition duration-300">Sign up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+      
+
+    {% if messages %}
+        
+    {% for message in messages %}
+    <div>
+      <div class="text-[#4d1354] px-6 py-4 border-0 rounded relative bg-white text-base">
+        <span class="text-xl inline-block mr-5 align-middle">
+          <i class="fas fa-bell"></i>
+        </span>
+        <span class="inline-block align-middle mr-8">
+         {{ message }}
+        </span>
+        <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
+          <span>×</span>
+      
+        </button>
+      </div>     
+    </div>
+    {% endfor %}
+{% endif %}
+</nav>
+
+<script>
+function closeAlert(event){
+let element = event.target;
+while(element.nodeName !== "BUTTON"){
+  element = element.parentNode;
+}
+element.parentNode.parentNode.removeChild(element.parentNode);
+}
+const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+</script>
+  {% comment %} {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><script>alert("{{ message }}")</script> </li>
+          {% endfor %}
+        </ul>
+  {% endif %} {% endcomment %}
+  {% block content %}{% endblock content %}
+</body>
+</html>
