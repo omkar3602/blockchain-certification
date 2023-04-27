@@ -6,6 +6,7 @@ from utils.email_sender import send_mail
 from utils import blockchain
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 # Create your views here.
 def index(request):
@@ -32,7 +33,20 @@ def issue_certificate(request):
 @login_required_message(message="Please log in, in order to view all certificates.")
 @login_required
 def view_all(request):
-    certificates = blockchain.view_all()
+    raw_certificates = blockchain.view_all()
+    certificates = []
+    for certificate in raw_certificates:
+        temp_certificate = []
+        temp_certificate.append(certificate[0])
+        temp_certificate.append(certificate[1])
+        temp_certificate.append(certificate[2])
+        temp_certificate.append(datetime.utcfromtimestamp(int(certificate[3])).strftime('%d %B %Y'))
+        temp_certificate.append(certificate[4])
+        certificates.append(temp_certificate)
+    del raw_certificates
+    if len(certificates) == 0:
+        messages.info(request, 'No certificates found.')
+        return redirect('home')
     return render(request, 'view_all.html', {'certificates': certificates})
 
 
@@ -61,7 +75,13 @@ def issued_certificates(request):
             for certificate in raw_certificates:
                 if certificate[1] == '':
                     continue
-                certificates.append(certificate)
+                else:
+                    temp_certificate = []
+                    temp_certificate.append(certificate[0])
+                    temp_certificate.append(certificate[1])
+                    temp_certificate.append(certificate[2])
+                    temp_certificate.append(datetime.utcfromtimestamp(int(certificate[3])).strftime('%d %B %Y'))
+                    certificates.append(temp_certificate)
 
         del raw_certificates
 
