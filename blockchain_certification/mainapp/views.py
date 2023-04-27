@@ -24,7 +24,7 @@ def issue_certificate(request):
             messages.info(request, 'Certificate Issuing Failed. Please check the details and try again.')
         else:
             load_dotenv()
-            send_mail(email, 'Certificate Issued', f"Your certificate from TeachAR has been issued successfully. Please find the link: {os.getenv('WEB_URL')}certificate/{receipt['transactionHash'].hex()}. The Certificate ID is {receipt['transactionHash'].hex()}.")
+            send_mail(email, 'Certificate Issued', f"Your certificate from BlockChain Certification has been issued successfully. Please find the link: {os.getenv('WEB_URL')}certificate/{receipt['transactionHash'].hex()}. The Certificate ID is {receipt['transactionHash'].hex()}.")
             messages.info(request, 'Certificate Issued Successfully at Credential ID: ' + receipt['transactionHash'].hex())
         return render(request, 'issue_certificate.html')
     return render(request, 'issue_certificate.html')
@@ -46,6 +46,9 @@ def view(request):
 def certificate(request, id):
 
     certificate = blockchain.view_certificate(id)
+    if certificate == -1:
+        messages.info(request, 'Certificate Not Found.')
+        return redirect('view')
     return render(request, 'certificate.html', {'certificate': certificate})
 
 def issued_certificates(request):
