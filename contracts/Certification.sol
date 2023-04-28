@@ -19,6 +19,12 @@ contract Certification {
     }
     Certificate[] certificates;
 
+    struct CertificateID {
+        address TxID;
+
+    }
+    CertificateID[] certificateIDs;
+
     constructor () public {
         owner = msg.sender;
     }
@@ -27,6 +33,12 @@ contract Certification {
         require(msg.sender == SENDER, "You cannot issue certificates");
 
         certificates.push(Certificate(to, name, competitionName, block.timestamp, email));
+    }
+
+    function addCertificateID(address TxID) public {
+        require(msg.sender == SENDER, "You cannot issue certificates");
+        certificateIDs.push(CertificateID(TxID));
+
     }
 
     function viewCertificates() public view returns (Certificate[] memory)
