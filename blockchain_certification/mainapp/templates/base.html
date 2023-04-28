@@ -8,12 +8,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;500;600900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {% comment %} <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">   {% endcomment %}
+  <script src="https://cdn.tailwindcss.com"></script>  
   <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
   <script>
@@ -43,7 +39,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="overflow-hidden bg-gradient-to-tr from-blue-200 via-indigo-200 to-pink-200">
+<body class="overflow-hidden bg-gradient-to-tr from-blue-200 via-indigo-200 to-pink-200 ">
   <nav class="bg-white shadow-lg fixed w-full z-10 py-2">
     <div class="px-8">
       <div class="flex sm:justify-between">
