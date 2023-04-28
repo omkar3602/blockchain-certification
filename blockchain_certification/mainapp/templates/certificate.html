@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="bg-white w-screen h-screen p-5 text-center border-8 border-solid border-[#5e609f] ml-1/5 outer-border">
+<div class="bg-white w-screen h-screen p-5 text-center border-8 border-solid border-[#5e609f] ml-1/5 outer-border mt-5">
     <div class="bg-white w-full h-full p-5 text-center border-4 border-dotted border-[#5e609f] inner-dotted-border">
            <span class="text-5xl font-bold text-[#5e609f] certification">Certificate of Participation</span>
            <br><br>
@@ -25,12 +25,38 @@
               <span class="text-xl fs-30">{{ certificate.id }}</span>
             </div>
             <div class="text-xl certify">
-              <button id="cmd">Generate PDF</button>
+              <button onclick="generatePDF()">Generate PDF</button>
             </div>
           </div>
     
     </div>
-    </div>
+    </div>   
 
+<script>
+  const options = {  
+    margin: 0.5,
+    filename: 'certificate.pdf',    
+    html2canvas: { 
+      width: 1240,
+    height: 1440,
+    scale: 1
+    },
+    jsPDF: { 
+      unit: 'in', 
+      format: 'B4', 
+      orientation: 'landscape',
+      css_media_type: 'screen'
+    }
+  }
+  function generatePDF(){
+    const content = document.getElementById('content');
+    html2pdf()
+    .from(content)
+    .set(options)
+    .save();
+  }
+ 
+ 
+  </script>
 
 {% endblock content %}
