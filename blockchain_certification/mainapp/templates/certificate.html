@@ -5,8 +5,8 @@
 
 {% block content %}
 
-<div class="w-screen h-screen p-5 text-center border-8 border-solid border-[#5e609f] ml-1/5 outer-border">
-    <div class="w-full h-full p-5 text-center border-4 border-dotted border-[#5e609f] inner-dotted-border">
+<div class="bg-white w-screen h-screen p-5 text-center border-8 border-solid border-[#5e609f] ml-1/5 outer-border">
+    <div class="bg-white w-full h-full p-5 text-center border-4 border-dotted border-[#5e609f] inner-dotted-border">
            <span class="text-5xl font-bold text-[#5e609f] certification">Certificate of Participation</span>
            <br><br>
            <span class="text-2xl certify"><i>This is to certify that</i></span>
@@ -19,6 +19,15 @@
            <span class="text-3xl certify"><i>dated</i></span><br>
           
           <span class="text-2xl fs-30">{{ certificate.2 }}</span>
+          <div class="flex justify-between">
+            <div class="text-center">
+              <span class="text-xl certify"><i>Credential ID</i></span><br>          
+              <span class="text-xl fs-30">{{ certificate.id }}</span>
+            </div>
+            <div class="text-xl certify">
+              <button id="cmd">Generate PDF</button>
+            </div>
+          </div>
     
     </div>
     </div>
