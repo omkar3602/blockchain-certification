@@ -5,7 +5,7 @@ pragma experimental ABIEncoderV2;
 
 
 contract Certification {
-    address constant SENDER = 0x1583fF370ac71Db02E085cc98Da1613fcFD21Ace;
+    address constant SENDER = 0xb14f1e5e6F6589eBaA805E3567Abba2c39d1C63B;
     
     
     address public owner;
@@ -20,7 +20,7 @@ contract Certification {
     Certificate[] certificates;
 
     struct CertificateID {
-        address TxID;
+        string TxID;
 
     }
     CertificateID[] certificateIDs;
@@ -35,15 +35,19 @@ contract Certification {
         certificates.push(Certificate(to, name, competitionName, block.timestamp, email));
     }
 
-    function addCertificateID(address TxID) public {
+    function addCertificateID(string memory TxID) public {
         require(msg.sender == SENDER, "You cannot issue certificates");
         certificateIDs.push(CertificateID(TxID));
-
     }
 
     function viewCertificates() public view returns (Certificate[] memory)
     {
         return certificates;
+    }
+
+    function viewCertificateIDs() public view returns (CertificateID[] memory)
+    {
+        return certificateIDs;
     }
 
     function viewCertificateByAddress(address to) public view returns(Certificate[] memory)
@@ -53,6 +57,19 @@ contract Certification {
         for (uint256 i = 0; i < certificates.length; i++) {
             if (certificates[i].to == to) {
                 result[counter] = certificates[i];
+                counter++;
+            }
+        }
+        return result;
+    }
+
+    function viewCertificateIDByAddress(address to) public view returns(CertificateID[] memory)
+    {
+        CertificateID[] memory result = new CertificateID[](certificateIDs.length);
+        uint256 counter = 0;
+        for (uint256 i = 0; i < certificates.length; i++) {
+            if (certificates[i].to == to) {
+                result[counter] = certificateIDs[i];
                 counter++;
             }
         }
