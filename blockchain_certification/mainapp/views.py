@@ -55,8 +55,7 @@ def certificate(request, id):
     if certificate == -1:
         messages.info(request, 'Certificate Not Found.')
         return redirect('view')
-    print(certificate)
-    return render(request, 'certificate.html', {'certificate': certificate})
+    return render(request, 'certificate.html', {'certificate': certificate, 'id': id})
 
 def issued_certificates(request):
     if request.method == 'POST':
