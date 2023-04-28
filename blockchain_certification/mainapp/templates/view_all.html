@@ -18,7 +18,7 @@
           <div class="py-2 block sm:px-6 lg:px-8">
             <div class="flex">
             {% if certificates %}         
-              <table class="table-auto border px-2">
+              <table class="table-auto border px-2 mx-3">
                 <thead class="bg-white border-b">
                   <tr>                 
                     <th scope="col" class="text-md font-bold text-gray-900 px-6 py-4 text-left">
@@ -45,19 +45,19 @@
                 {% for certificate in certificates %}
                 <tbody>
                   <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">                  
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900 cursor-pointer">
+                    <td class="max-w-xs overflow-hidden whitespace-nowrap overflow-ellipsis px-6 py-4 text-sm font-medium text-gray-900 cursor-pointer">
                       {{ certificate.0 }}
                     </td>
-                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                    <td class="max-w-xs overflow-hidden whitespace-nowrap overflow-ellipsis text-sm text-gray-900 font-normal px-6 py-4">
                       {{ certificate.1 }}
                     </td>
-                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                    <td class="max-w-xs overflow-hidden whitespace-nowrap overflow-ellipsis text-sm text-gray-900 font-normal px-6 py-4">
                       {{ certificate.2 }}
                     </td>
-                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                    <td class="max-w-xs overflow-hidden whitespace-nowrap overflow-ellipsis text-sm text-gray-900 font-normal px-6 py-4">
                       {{ certificate.3 }}
                     </td>
-                    <td class="text-sm text-gray-900 font-normal px-6 py-4">
+                    <td class="max-w-xs overflow-hidden whitespace-nowrap overflow-ellipsis text-sm text-gray-900 font-normal px-6 py-4">
                       {{ certificate.4 }}
                     </td>
                     <td class="text-sm text-gray-900 font-normal px-8 py-4">
